@@ -1,15 +1,29 @@
-# ⚡ Proyecto Vite + Vanilla JS
+# hat IA con Vanilla JS + OpenRouterC
 
-Este es un proyecto básico configurado con [Vite](https://vitejs.dev/) y JavaScript puro (Vanilla JS). Vite proporciona un entorno 
-de desarrollo rápido y moderno, ideal para construir aplicaciones web ligeras sin frameworks pesados.
+
+
+Aplicación web desarrollada con JavaScript puro que permite interactuar con diferentes modelos de inteligencia artificial a través de la API de OpenRouter.
+El usuario puede escribir preguntas o mensajes, y la IA responde en tiempo real, similar al funcionamiento de un asistente conversacional.
 
 ## 🚀 Características
 
-- ⚡ Configuración ultra rápida con Vite
-- 💡 JavaScript puro (Vanilla JS)
-- 🔄 Recarga en caliente (HMR)
-- 📁 Estructura sencilla y modular
-- ✅ Listo para producción con un solo comando
+🚀 Características
+
+🔹 Desarrollado 100% en Vanilla JavaScript (sin frameworks).
+
+🔹 Uso de Fetch API para comunicación con el backend de IA.
+
+🔹 Integración con OpenRouter y soporte para varios modelos:
+
+google/gemini-2.0-flash-exp:free
+
+meta-llama/llama-3.3-70b-instruct:free
+
+deepseek/deepseek-prover-v2:free
+
+🔹 Diseño simple, ligero y responsive.
 
 ## 📁 Estructura del proyecto
+
+
 

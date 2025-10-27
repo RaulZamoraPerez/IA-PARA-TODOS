@@ -5,36 +5,40 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/src/style.css" rel="stylesheet" />
-    <title>nucleos Ia APP</title>
+    <title>IA para todos</title>
   </head>
   <body class="bg-slate-900">
     <div class=" max-w-2xl mx-auto flex flex-col space-y-3">
       <h1 
         class="inline-block text-8xl font-bold bg-gradient-to-r from-purple-500 to-purple-800 bg-clip-text text-transparent text-center my-10"
-      >AI Nucleus</h1>
-      <form id="form" class='flex flex-col space-y-3' >
-        <label htmlFor="prompt" class='text-white font-bold text-2xl text-center'>
+      >IA para todos</h1>
+      <form id="form" class='flex flex-col space-y-3' aria-label="Formulario de consulta">
+        <label for="prompt" class='text-white font-bold text-2xl text-center'>
           ¿Cómo puedo ayudarte?
         </label>
         <div class="relative">
           <input
               name="prompt"
               id="prompt"
-              class="border bg-white p-4 rounded-lg w-full"
+              class="border bg-white p-4 rounded-lg w-full pr-20 focus:outline-none focus:ring-4 focus:ring-purple-400/30"
               placeholder="Pregunta lo que quieras"
+              aria-label="Campo de pregunta"
           />
                 <button
+                    id="submit"
                     type="submit"
-                    aria-label="Enviar"
-                    class=" cursor-pointer absolute top-1/2 right-5 transform -translate-x-1/2 -translate-y-1/2"
+                    aria-label="Enviar pregunta"
+                    class="cursor-pointer absolute top-1/2 right-3 -translate-y-1/2 flex items-center justify-center p-2 text-white bg-purple-600 rounded-full hover:bg-purple-700 focus:outline-none focus:ring-4 focus:ring-purple-500/40"
                 >
+                    <span id="btn-icon" class="sr-only">Enviar</span>
                     <svg
+                        id="send-svg"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
                         strokeWidth="1.5"
                         stroke="currentColor"
-                        class="w-10 h-10"
+                        class="w-8 h-8 text-white"
                     >
                         <path
                             strokeLinecap="round"
@@ -42,10 +46,18 @@
                             d="m15 11.25-3-3m0 0-3 3m3-3v7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                         />
                     </svg>
+                    <svg id="spinner" class="hidden animate-spin w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                    </svg>
                 </button>
             </div>
-    </form>          
-    <div id="app" class="text-white py-10 whitespace-break-spaces text-lg"></div>
+            <div class="flex flex-wrap gap-2">
+              <button type="button" id="example-1" class="text-sm px-3 py-1 bg-white/10 text-white rounded-full">Explícame X en 2 frases</button>
+              <button type="button" id="example-2" class="text-sm px-3 py-1 bg-white/10 text-white rounded-full">Dame ideas para un post sobre IA</button>
+            </div>
+    </form>
+    <div id="app" class="text-white py-10 whitespace-pre-wrap text-lg" role="status" aria-live="polite"></div>
  </div>
     <script type="module" src="/src/main.js"></script>
   </body>
